@@ -1,0 +1,41 @@
+.show_date_time_spent {
+    position: relative;
+}
+
+.oe_topbar{
+    background-image: linear-gradient(rgb(53, 75, 69), rgb(0, 90, 75))!important;
+}
+
+.oe_secondary_menu_section{
+    color: #005A4B!important;
+}
+
+.oe_active{
+    background-image: linear-gradient(rgb(53, 75, 69), rgb(0, 90, 75))!important;
+}
+
+li.oe_active .arrow span{
+    background-image: linear-gradient(rgb(53, 75, 69), rgb(0, 90, 75))!important;
+}
+
+#eo_status_frame{
+    border-bottom: 1px solid black!important;
+}
+
+.openerp .oe_topbar .oe_dropdown_menu li:hover{
+    background-image: linear-gradient(rgb(53, 75, 69), rgb(0, 90, 75))!important;
+}
+
+.openerp .oe_menu > li > .oe_active {
+    text-shadow: black 0px 0px 3px;
+    background-color: #003C2F;
+    background-image: none !important;
+}
+
+.openerp .oe_systray {
+    visibility: collapse;
+}
+
+.openerp .oe_footer {
+    visibility: collapse;
+}

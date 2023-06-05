@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Attendance Logs Report -->
+
+        <record id="view_attendance_logs_report_row_sum_search" model="ir.ui.view">
+            <field name="name">view.attendance.logs.report.row.summary.reporting.search</field>
+            <field name="model">attendance.logs.wizard</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="List">
+                    <field name="persons_id"/>
+                    <field name="loc_id"/>
+                    <filter string="Check-IN" name="date_type" domain="[('date_type','=', 'Check - IN')]" />
+                    <filter string="Check-OUT" name="date_type" domain="[('date_type','=', 'Check - OUT')]" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Locations" domain="[]" context="{'group_by' : 'loc_id'}" />                        
+                        <filter string="Type" domain="[]" context="{'group_by' : 'date_type'}" />     
+                        <filter string="Date/Time" domain="[]" context="{'group_by' : 'date'}" />     
+                        <filter string="Persons" domain="[]" context="{'group_by' : 'persons_id'}" />  
+                        <filter string="Category" domain="[]" context="{'group_by' : 'category'}" />  
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_attendance_logs_row_sum_tree" model="ir.ui.view">
+            <field name="name">view.attendance.logs.row.summary.reporting.tree</field>
+            <field name="model">attendance.logs.wizard</field>
+            <field name="arch" type="xml">
+                <tree string="List" create="false" delete="false">
+                    <field name="persons_id"/>
+                    <field name="date"/>
+                    <field name="date_type"/>
+                    <field name="loc_id"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_attendance_logs_reporting" model="ir.ui.view">
+            <field name="name">Attendance Logs</field>
+            <field name="model">list.attendance.logs.reporting</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Attendance Logs" version="7.0">
+                    <header>
+                        <button name="xls_export" string="Export XLS" type="object" context="{'xls_export':1}"/>
+                    </header>
+
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="filter_name_id" widget="selection" options="{'create': false, 'create_edit': false, 'no_open':true}"/>
+                        <field name="filter_location_id" widget="selection" options="{'create': false, 'create_edit': false, 'no_open':true}"/>
+
+                    </group>
+                    <button string="Refresh" name="reload_data" type="object" class="oe_highlight"/>
+
+
+                    <notebook>
+                        <page string="List">
+                                <button string="Detailed lines" name="show_summary_lines" type="object"/>
+                                <field name="attendance_logs_report_ids" limit="500">
+                                    <tree limit="500" create="false" delete="false">
+                                        <field name="persons_id" />
+                                        <field name="date" />
+                                        <field name="date_type" />
+                                        <field name="loc_id"/>
+                                        <field name="category"/>
+                                    </tree>
+                                </field>        
+                        </page>
+                    </notebook>        
+                </form>
+            </field>
+        </record>
+
+        <record id="action_attendance_logs_reporting" model="ir.actions.act_window">
+            <field name="name">Attendance Logs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">list.attendance.logs.reporting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_attendance_logs_reporting"/>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem name="List Attendance Logs"
+                  id="menu_reporting_attendance_logs" 
+                  action="action_attendance_logs_reporting"
+                  sequence="20"
+                  parent="reports_menu"/>
+
+
+
+        <!-- Attendance Sheet Report -->
+
+        <record id="view_attendance_sheet_row_sum_search" model="ir.ui.view">
+            <field name="name">view.attendance.sheet.row.summary.reporting.search</field>
+            <field name="model">attendance.sheet.wizard</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="List">
+                    <field name="persons_id"/>
+                    <field name="loc_id"/>
+                    <filter string="Check-IN" name="date_type" domain="[('date_type','=', 'Check - IN')]" />
+                    <filter string="Check-OUT" name="date_type" domain="[('date_type','=', 'Check - OUT')]" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Locations" domain="[]" context="{'group_by' : 'loc_id'}" />                        
+                        <filter string="Type" domain="[]" context="{'group_by' : 'date_type'}" />     
+                        <filter string="Date/Time" domain="[]" context="{'group_by' : 'date'}" />     
+                        <filter string="Persons" domain="[]" context="{'group_by' : 'persons_id'}" />  
+                        <filter string="Category" domain="[]" context="{'group_by' : 'category'}" />  
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_attendance_sheet_row_sum_tree" model="ir.ui.view">
+            <field name="name">view.attendance.logs.row.summary.reporting.tree</field>
+            <field name="model">attendance.sheet.wizard</field>
+            <field name="arch" type="xml">
+                <tree string="List" create="false" delete="false">
+                    <field name="persons_id"/>
+                    <field name="date"/>
+                    <field name="date_type"/>
+                    <field name="loc_id"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_attendance_sheet_reporting" model="ir.ui.view">
+            <field name="name">Attendance Logs</field>
+            <field name="model">list.attendance.sheet.reporting</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Attendance Sheet" version="7.0">
+                    <header>
+                        <button name="xls_export" string="Export XLS" type="object" context="{'xls_export':1}"/>
+                    </header>
+
+                    <group>
+                        <field name="account_period_wizard_id" widget="selection"/>
+
+                    </group>
+                    <button string="Refresh" name="reload_data" type="object" class="oe_highlight"/>
+
+                    <notebook>
+                        <page string="List">
+                                <button string="Detailed lines" name="show_summary_lines" type="object"/>
+                                <field name="attendance_sheet_report_ids" limit="2000">
+                                    <tree limit="2000" create="false" delete="false">
+                                        <field name="persons_id" />
+                                        <field name="date" />
+                                        <field name="date_type" />
+                                        <field name="loc_id"/>
+                                        <field name="category"/>
+                                    </tree>
+                                </field>        
+                        </page>
+                    </notebook>        
+                </form>
+            </field>
+        </record>
+
+        <record id="action_attendance_sheet_reporting" model="ir.actions.act_window">
+            <field name="name">Attendance Sheet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">list.attendance.sheet.reporting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_attendance_sheet_reporting"/>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem name="List Attendance Sheet"
+                  id="menu_reporting_attendance_sheet" 
+                  action="action_attendance_sheet_reporting"
+                  sequence="22"
+                  parent="reports_menu"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+		<menuitem id="eoATTENDANCE_menu" name="eoATTENDANCE" web_icon="data/elastoffice.png"/>
+		<menuitem id="attendance_menu" name="Attendance" sequence="20" parent ="eoATTENDANCE_menu"/>
+		<menuitem id="configurations_menu" name="Configurations" sequence="30" parent ="eoATTENDANCE_menu"/>
+		<menuitem id="reports_menu" name="Reporting" groups="group_eoattendance_admin" sequence="40" parent ="eoATTENDANCE_menu"/>
+		
+	</data>
+</openerp>

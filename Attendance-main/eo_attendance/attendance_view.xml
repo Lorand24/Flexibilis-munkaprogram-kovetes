@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- Form view of Checkin Checkout -->
+		<record id="view_Checkin_Checkout_form" model="ir.ui.view">
+            <field name="name">Checkin Checkout</field>
+            <field name="model">attendance.logs</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Checkin Checkout" version="7.0">
+                	<group col="2">
+                		<field name="persons_id" readonly="1" create="0" editable="0" string="Person :"/>
+	                	<field name="loc_id" readonly="1" create="0" editable="0" string="Default Location :"/>
+	                	<field name="status" readonly="1" string="Status :"/>
+	                	<field name="image" readonly="1" string=" " widget="clock_from"/>
+	                	<field name="category" readonly="1" string=" " widget="clock_from"/>
+	                </group>
+	                <button string="Check-IN" name="check_in" type="object" class="oe_highlight" attrs="{'invisible' : [('status','=','Check - IN')]}"/>
+	                <button string="Check-OUT" name="check_out" type="object" class="oe_highlight" attrs="{'invisible' : [('status','=','Check - OUT')]}"/>
+                </form>
+            </field>
+        </record>
+
+		<!-- Actions of Checkin Checkout -->
+	    <record model="ir.actions.act_window" id="Checkin_Checkout_action_window">
+	      <field name="name">Checkin Checkout</field>
+	      <field name="res_model">attendance.logs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_Checkin_Checkout_form"/>
+	    </record>
+
+	    <!-- Menu Checkin Checkout under Attendance -->
+		<menuitem name="Checkin Checkout"
+		          id="menu_Checkin_Checkout" 
+				  action="Checkin_Checkout_action_window"
+				  sequence="22"
+				  parent="attendance_menu"/>
+
+		<!-- Search view of Attendance Logs -->
+		<record id="attendance_logs_search_view" model="ir.ui.view">
+            <field name="name">Attendance.logs.search.form</field>
+            <field name="model">attendance.logs</field>
+            <field name="arch" type="xml">
+                <search string="Attendance Logs">
+                    <field name="persons_id"/>
+                    <field name="loc_id"/>
+                    <filter string="Check-IN" name="date_type" domain="[('date_type','=', 'Check - IN')]" />
+                    <filter string="Check-OUT" name="date_type" domain="[('date_type','=', 'Check - OUT')]" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Locations" domain="[]" context="{'group_by' : 'loc_id'}" />                        
+                        <filter string="Type" domain="[]" context="{'group_by' : 'date_type'}" />     
+                        <filter string="Date/Time" domain="[]" context="{'group_by' : 'date'}" />     
+                        <filter string="Persons" domain="[]" context="{'group_by' : 'persons_id'}" />  
+                        <filter string="Category" domain="[]" context="{'group_by' : 'category'}" />  
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<!-- Calendar view of Attendance Logs --> 
+		<record id="attendance_logs_calendar_view" model="ir.ui.view">
+		    <field name="name">Attendance.logs.calendar</field>
+		    <field name="model">attendance.logs</field>
+		    <field name="arch" type="xml">
+		        <calendar string="Attendance Calendar" color="persons_id" date_start="date" >
+		            <field name="persons_id"/>   
+		            <field name="date_type"/>    
+		        </calendar>
+		     </field>
+		</record>
+
+		<!-- Form view of Attendance Logs -->
+		<record model="ir.ui.view" id="attendance_logs_form_view">
+	      <field name="name">Attendance.logs.form</field>
+	      <field name="model">attendance.logs</field>
+	      <field name="arch" type="xml">
+	        <form string="Attendance Logs">
+	        	<group colspan="1" col="1">
+	        		<field name="image" widget="image" nolabel="1"/>
+	        		<field name="persons_id" widget="selection" string="Person name"/>
+	        		<field name="date" on_change="onchange_date(date)"/>
+	        		<field name="date_type"/>
+	        		<field name="loc_id" widget="selection" string="Location"/>
+	        		<field name="category" string="Category"/>
+	        	</group>
+	        </form>
+	      </field>
+	    </record>
+
+		<!-- Tree view of Attendance Logs   -->
+		<record model="ir.ui.view" id="attendance_logs_tree_view">
+	      <field name="name">Attendance.logs.tree</field>
+	      <field name="model">attendance.logs</field>
+	      <field name="arch" type="xml">
+	        <tree string="Attendance Logs">
+	          <field name="persons_id" string="Persons"/>
+	          <field name="date"/>
+	          <field name="date_type"/>
+	          <field name="loc_id" string="Location"/>
+	          <field name="category" string="Category"/>
+	        </tree>
+	      </field>
+	    </record>
+
+	    <!-- Actions of Attendance Logs -->
+	    <record model="ir.actions.act_window" id="attendance_logs_action_window">
+	      <field name="name">Attendance Logs</field>
+	      <field name="res_model">attendance.logs</field>
+	      <field name="view_type">form</field>
+	      <field name="view_mode">tree,form,calendar</field>
+	    </record>
+
+		<!-- Menu Attendance Logs under Attendance -->
+		<menuitem name="Attendance Logs"
+		          id="menu_attendance_logs" 
+				  action="attendance_logs_action_window"
+				  sequence="21"
+				  parent="attendance_menu"/>
+
+
+
+		<!-- Form view of Configurations Locations -->
+		<record model="ir.ui.view" id="configurations_locations_form_view">
+	      <field name="name">Configurations.locations.form</field>
+	      <field name="model">configurations.locations</field>
+	      <field name="arch" type="xml">
+	        <form string="Locations">
+	        	<group colspan="1" col="1">
+	        		<field name="image" widget="image" nolabel="1"/>
+	        		<field name="name" string="Location" />
+	        		<field name="locwifi_id" options="{'no_create_edit': True}"/>
+	        	</group>
+	        	<separator string=" " colspan="4"/>
+	        	<field name="description" nolabel="1" placeholder="Description"/>
+	        </form>
+	      </field>
+	    </record>
+
+		<!-- Tree view of Configurations Locations  -->
+		<record model="ir.ui.view" id="configurations_locations_tree_view">
+	      <field name="name">Configurations.locations.tree</field>
+	      <field name="model">configurations.locations</field>
+	      <field name="arch" type="xml">
+	        <tree string="Locations">
+	          <field name="name"/>
+	          <field name="locwifi_id"/>
+	          <field name="description"/>
+	        </tree>
+	      </field>
+	    </record>
+
+	    <!-- Action of Configurations Locations-->
+	    <record model="ir.actions.act_window" id="configurations_locations_action_window">
+	      <field name="name">Configurations Locations</field>
+	      <field name="res_model">configurations.locations</field>
+	      <field name="view_type">form</field>
+	      <field name="view_mode">tree,form</field>
+	    </record>
+
+	    <!-- Menu Locations under Configurations -->
+		<menuitem name="Locations"
+				  groups="group_eoattendance_admin"
+		          id="menu_configurations_locations" 
+				  action="configurations_locations_action_window"
+				  sequence="21"
+				  parent="configurations_menu"/>
+
+
+
+		<!-- Form view of Configurations Persons-->
+		<record model="ir.ui.view" id="configurations_persons_form_view">
+	      <field name="name">Configurations.persons.form</field>
+	      <field name="model">configurations.persons</field>
+	      <field name="arch" type="xml">
+	        <form string="Persons">
+	        	<group colspan="1" col="1">
+	        		<field name="image" widget="image" nolabel="1"/>
+	        		<field name="name" string="Person"/>
+	        		<field name="username"/>
+	        		<field name="password" password="True"/>
+	        		<field name="user_id" widget="selection"/>
+	        		<field name="location_id" widget="selection"/>
+	        	</group>
+	        </form>
+	      </field>
+	    </record>
+
+		<!-- Tree view of Configurations Persons  -->
+		<record model="ir.ui.view" id="configurations_persons_tree_view">
+	      <field name="name">Configurations.persons.tree</field>
+	      <field name="model">configurations.persons</field>
+	      <field name="arch" type="xml">
+	        <tree string="Persons">
+	          <field name="name"/>
+	          <field name="username"/>
+	          <field name="user_id"/>
+	          <field name="location_id"/>
+	        </tree>
+	      </field>
+	    </record>
+
+	    <!-- Action of Configurations Persons-->
+	    <record model="ir.actions.act_window" id="configurations_persons_action_window">
+	      <field name="name">Configurations Persons</field>
+	      <field name="res_model">configurations.persons</field>
+	      <field name="view_type">form</field>
+	      <field name="view_mode">tree,form</field>
+	    </record>
+
+	    <!-- Menu Persons under Configurations -->
+		<menuitem name="Persons"
+		          id="menu_configurations_persons" 
+				  action="configurations_persons_action_window"
+				  sequence="22"
+				  parent="configurations_menu"/>
+		
+
+
+		<!-- Form view of Wifi Points-->
+		<record model="ir.ui.view" id="wifi_points_form_view">
+	      <field name="name">Wifi.points.form</field>
+	      <field name="model">wifi.points</field>
+	      <field name="arch" type="xml">
+	        <form string="Wifi Points">
+	        	<group colspan="1" col="1">
+	        		<field name="name" string="Wifi Name"/>
+	        		<field name="wifi_password"/>
+	        	</group>
+	        </form>
+	      </field>
+	    </record>
+
+		<!-- Tree view of Wifi Points  -->
+		<record model="ir.ui.view" id="wifi_points_tree_view">
+	      <field name="name">Wifi.points.tree</field>
+	      <field name="model">wifi.points</field>
+	      <field name="arch" type="xml">
+	        <tree string="Wifi Points">
+	          <field name="name" string="Wifi Name"/>
+	          <field name="wifi_password"/>
+	        </tree>
+	      </field>
+	    </record>
+
+	    <!-- Action of Wifi Points-->
+	    <record model="ir.actions.act_window" id="wifi_points_action_window">
+	      <field name="name">Wifi Points</field>
+	      <field name="res_model">wifi.points</field>
+	      <field name="view_type">form</field>
+	      <field name="view_mode">tree,form</field>
+	    </record>
+
+	    <!-- Menu Wifi Points under Configurations -->
+		<menuitem name="Wifi Points"
+				  groups="group_eoattendance_admin"
+		          id="menu_wifi_points" 
+				  action="wifi_points_action_window"
+				  sequence="20"
+				  parent="configurations_menu"/>
+
+
+
+		<!-- Menu Periods under Configurations-->
+		<menuitem  id="menu_periods" name="Periods" groups="group_eoattendance_admin" parent="configurations_menu" sequence="24"/>
+
+		<!-- Menu Fiscal Year under Periods -->
+		<menuitem name="Fiscal Year"
+				  id="menu_fiscal_year"
+				  action="account.action_account_fiscalyear"
+				  sequence="10"
+				  parent="menu_periods"/> 
+
+		<!-- Menu Periods under Periods -->
+		<menuitem name="Periods"
+				  id="menu_periods_periods"
+				  action="account.action_account_period"
+				  sequence="20"
+				  parent="menu_periods"/> 
+
+	</data>
+</openerp>

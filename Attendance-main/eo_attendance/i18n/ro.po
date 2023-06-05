@@ -1,0 +1,501 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* eo_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20151020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-09 05:09+0000\n"
+"PO-Revision-Date: 2022-09-09 05:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:74
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:31
+#: view:attendance.logs:0
+#: field:attendance.logs,category:0
+#: field:attendance.logs.wizard,category:0
+#: view:attendance.sheet.wizard:0
+#: field:attendance.sheet.wizard,category:0
+#, python-format
+msgid "Category"
+msgstr "Categoria"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.menu_reporting_attendance_sheet
+msgid "List Attendance Sheet"
+msgstr "Lista de prezență"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_attendance
+#: model:ir.ui.menu,name:eo_attendance.attendance_menu
+msgid "Attendance"
+msgstr "Prezența"
+
+#. module: eo_attendance
+#: field:list.attendance.logs.reporting,date_from:0
+msgid "From"
+msgstr "De la"
+
+#. module: eo_attendance
+#: view:wifi.points:0
+msgid "Wifi Name"
+msgstr "Nume Wifi"
+
+#. module: eo_attendance
+#: sql_constraint:configurations.persons:0
+msgid "You can not have two users with the same username !"
+msgstr "Nu puteți avea doi utilizatori cu același nume de utilizator !"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:85
+#, python-format
+msgid "date_type"
+msgstr "tip_data"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_attendance_sheet_wizard
+msgid "Atttendance Sheet Wizard"
+msgstr "Asistent pentru foaia de prezență"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_wifi_networks
+msgid "Wifi Networks"
+msgstr "Rețele Wifi"
+
+#. module: eo_attendance
+#: field:list.attendance.sheet.reporting,account_period_wizard_id:0
+msgid "Period"
+msgstr "Perioada"
+
+#. module: eo_attendance
+#: field:configurations.persons,location_id:0
+msgid "Default Location"
+msgstr "implicit Locație"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+msgid "Group By..."
+msgstr "Grupați prin..."
+
+#. module: eo_attendance
+#: selection:attendance.logs,category:0
+#: selection:attendance.logs.wizard,category:0
+#: selection:attendance.sheet.wizard,category:0
+msgid "Other"
+msgstr "Alte"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+msgid "Check-IN"
+msgstr "Autentificare"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:73
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:30
+#: view:attendance.logs:0
+#: field:attendance.logs,loc_id:0
+#: field:attendance.logs.wizard,loc_id:0
+#: field:attendance.sheet.wizard,loc_id:0
+#: view:configurations.locations:0
+#: field:list.attendance.logs.reporting,filter_location_id:0
+#, python-format
+msgid "Location"
+msgstr "Locația"
+
+#. module: eo_attendance
+#: field:configurations.locations,locwifi_id:0
+msgid "Location Wifi Points"
+msgstr "Locație Puncte Wifi"
+
+#. module: eo_attendance
+#: model:ir.actions.act_window,name:eo_attendance.configurations_locations_action_window
+msgid "Configurations Locations"
+msgstr "Configurații Locații"
+
+#. module: eo_attendance
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:29
+#: view:attendance.logs:0
+#: field:attendance.logs,date_type:0
+#: field:attendance.logs.wizard,date_type:0
+#: view:attendance.sheet.wizard:0
+#: field:attendance.sheet.wizard,date_type:0
+msgid "Type"
+msgstr "Tip"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_attendance_logs_wizard
+msgid "Atttendance Logs Wizard"
+msgstr "Atttendance Logs Wizard"
+
+#. module: eo_attendance
+#: model:ir.module.category,name:eo_attendance.module_category_eo_attendance
+msgid "eoAttendance"
+msgstr "eoPrezența"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:87
+#, python-format
+msgid "category"
+msgstr "categoria"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+msgid "Check-OUT"
+msgstr "Deconectare"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:84
+#, python-format
+msgid "date"
+msgstr "data"
+
+#. module: eo_attendance
+#: view:configurations.locations:0
+#: field:configurations.locations,description:0
+msgid "Description"
+msgstr "Descriere"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+msgid "Date/Time"
+msgstr "Data/Timp"
+
+#. module: eo_attendance
+#: field:attendance.logs.wizard,logs_reporting_id:0
+#: field:attendance.sheet.wizard,attendance_sheet_id:0
+msgid "unknown"
+msgstr "necunoscut"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_account_period
+msgid "Account period"
+msgstr "Perioada contului"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.reports_menu
+msgid "Reporting"
+msgstr "Raportare"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.menu_reporting_attendance_logs
+msgid "List Attendance Logs"
+msgstr "Lista jurnalelor de prezență"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_change_password_user
+msgid "Change Password Wizard User"
+msgstr "Schimbarea parolei"
+
+#. module: eo_attendance
+#: view:list.attendance.logs.reporting:0
+#: view:list.attendance.sheet.reporting:0
+msgid "Detailed lines"
+msgstr "Linii detaliate"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_change_password
+msgid "Change Password "
+msgstr "Schimbarea parolei"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: model:ir.actions.act_window,name:eo_attendance.Checkin_Checkout_action_window
+#: model:ir.ui.menu,name:eo_attendance.menu_Checkin_Checkout
+msgid "Checkin Checkout"
+msgstr "Autentificare Deconectare"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/wizard/wizard_attendance_logs.py:50
+#: field:list.attendance.logs.reporting,attendance_logs_report_ids:0
+#, python-format
+msgid "Attendance Logs Wizard"
+msgstr "Attendance Logs Wizard"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_change_persons_password
+msgid "Change Password Persons"
+msgstr "Schimbarea parolei Persoane"
+
+#. module: eo_attendance
+#: selection:attendance.logs,category:0
+#: selection:attendance.logs.wizard,category:0
+#: selection:attendance.sheet.wizard,category:0
+msgid "GPS"
+msgstr "GPS"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_account_period_wizard
+msgid "Account period Wizard"
+msgstr "Account period Wizard"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_list_attendance_sheet_reporting
+msgid "Attendance Sheet Report"
+msgstr "Raport privind foaia de prezență"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.menu_periods
+#: model:ir.ui.menu,name:eo_attendance.menu_periods_periods
+msgid "Periods"
+msgstr "Perioade"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_list_attendance_logs_reporting
+msgid "Attendance Logs Report"
+msgstr "Raport privind jurnalele de prezență"
+
+#. module: eo_attendance
+#: field:configurations.locations,name:0
+#: field:configurations.persons,name:0
+#: field:list.attendance.logs.reporting,name:0
+#: field:list.attendance.sheet.reporting,name:0
+#: field:wifi.points,name:0
+msgid "Name"
+msgstr "Nume"
+
+#. module: eo_attendance
+#: model:ir.actions.act_window,name:eo_attendance.wifi_points_action_window
+#: model:ir.model,name:eo_attendance.model_wifi_points
+#: model:ir.ui.menu,name:eo_attendance.menu_wifi_points
+#: view:wifi.points:0
+msgid "Wifi Points"
+msgstr "Puncte Wifi"
+
+#. module: eo_attendance
+#: model:res.groups,name:eo_attendance.group_eoattendance_admin
+msgid "Admin"
+msgstr "Admin"
+
+#. module: eo_attendance
+#: selection:attendance.logs,category:0
+#: selection:attendance.logs.wizard,category:0
+#: selection:attendance.sheet.wizard,category:0
+msgid "Manual"
+msgstr "Manual"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:83
+#, python-format
+msgid "persons_id"
+msgstr "persons_id"
+
+#. module: eo_attendance
+#: selection:attendance.logs,category:0
+#: selection:attendance.logs.wizard,category:0
+#: selection:attendance.sheet.wizard,category:0
+msgid "Wifi"
+msgstr "Wifi"
+
+#. module: eo_attendance
+#: view:attendance.logs.wizard:0
+#: view:attendance.sheet.wizard:0
+#: view:list.attendance.logs.reporting:0
+#: view:list.attendance.sheet.reporting:0
+msgid "List"
+msgstr "Lista"
+
+#. module: eo_attendance
+#: view:list.attendance.logs.reporting:0
+#: view:list.attendance.sheet.reporting:0
+msgid "Refresh"
+msgstr "Actualizare"
+
+#. module: eo_attendance
+#: field:configurations.persons,user_id:0
+#: model:res.groups,name:eo_attendance.group_eoattendance_user
+msgid "User"
+msgstr "Utilizator"
+
+#. module: eo_attendance
+#: field:configurations.locations,image:0
+msgid "Location Image"
+msgstr "Locație Imagine"
+
+#. module: eo_attendance
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:27
+#: field:attendance.logs,persons_id:0
+#: field:attendance.logs.wizard,persons_id:0
+#: field:attendance.sheet.wizard,persons_id:0
+#: view:configurations.persons:0
+#: field:list.attendance.logs.reporting,filter_name_id:0
+msgid "Person"
+msgstr "Persoană"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.menu_fiscal_year
+msgid "Fiscal Year"
+msgstr "Anul fiscal"
+
+#. module: eo_attendance
+#: model:ir.actions.report.xml,name:eo_attendance.attendance_logs_report_xls
+#: model:ir.model,name:eo_attendance.model_attendance_logs
+msgid "Atttendance Logs"
+msgstr "Jurnalele de prezență"
+
+#. module: eo_attendance
+#: selection:attendance.logs,date_type:0
+#: selection:attendance.logs.wizard,date_type:0
+#: selection:attendance.sheet.wizard,date_type:0
+msgid "Check - OUT"
+msgstr "Deconectare"
+
+#. module: eo_attendance
+#: selection:attendance.logs,date_type:0
+#: selection:attendance.logs.wizard,date_type:0
+#: selection:attendance.sheet.wizard,date_type:0
+msgid "Check - IN"
+msgstr "Autentificare"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:86
+#, python-format
+msgid "loc_id"
+msgstr "loc_id"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+msgid "Attendance Calendar"
+msgstr "Calendar de prezență"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+msgid "Person name"
+msgstr "Numele persoanei"
+
+#. module: eo_attendance
+#: model:ir.actions.report.xml,name:eo_attendance.pontaj_report_xls
+msgid "Attendance sheet"
+msgstr "Fișa de prezență"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.configurations_menu
+msgid "Configurations"
+msgstr "Configurații"
+
+#. module: eo_attendance
+#: field:configurations.persons,password:0
+msgid "Password"
+msgstr "Parola"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:70
+#: code:addons/eo_attendance/report/pontaj_xls.py:107
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+#: view:configurations.persons:0
+#: model:ir.ui.menu,name:eo_attendance.menu_configurations_persons
+#, python-format
+msgid "Persons"
+msgstr "Persoană"
+
+#. module: eo_attendance
+#: model:ir.ui.menu,name:eo_attendance.eoATTENDANCE_menu
+msgid "eoATTENDANCE"
+msgstr "eoPrezență"
+
+#. module: eo_attendance
+#: field:list.attendance.logs.reporting,date_to:0
+msgid "To"
+msgstr "Pană la"
+
+#. module: eo_attendance
+#: model:ir.actions.act_window,name:eo_attendance.configurations_persons_action_window
+msgid "Configurations Persons"
+msgstr "Configurații Persoane"
+
+#. module: eo_attendance
+#: field:configurations.persons,image:0
+msgid "Image"
+msgstr "Imagine"
+
+#. module: eo_attendance
+#: field:wifi.points,wifi_password:0
+msgid "Wifi Password"
+msgstr "Parola Wifi"
+
+#. module: eo_attendance
+#: view:attendance.logs:0
+#: view:attendance.sheet.wizard:0
+#: view:configurations.locations:0
+#: model:ir.model,name:eo_attendance.model_configurations_locations
+#: model:ir.ui.menu,name:eo_attendance.menu_configurations_locations
+msgid "Locations"
+msgstr "Locație"
+
+#. module: eo_attendance
+#: field:configurations.persons,username:0
+msgid "UserName"
+msgstr "NumeUtilizator"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:71
+#: code:addons/eo_attendance/report/pontaj_xls.py:108
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:28
+#: field:attendance.logs,date:0
+#: field:attendance.logs.wizard,date:0
+#: field:attendance.sheet.wizard,date:0
+#, python-format
+msgid "Date / Time"
+msgstr "Data / Timp"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_account_fiscalyear_wizard
+msgid "Fiscal Year Wizard"
+msgstr "Fiscal Year Wizard"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:43
+#: report:addons/eo_attendance/report/templates/attendance_logs.mako:13
+#: view:attendance.logs:0
+#: model:ir.actions.act_window,name:eo_attendance.action_attendance_logs_reporting
+#: model:ir.actions.act_window,name:eo_attendance.attendance_logs_action_window
+#: model:ir.ui.menu,name:eo_attendance.menu_attendance_logs
+#: view:list.attendance.logs.reporting:0
+#, python-format
+msgid "Attendance Logs"
+msgstr "Jurnalele de prezență"
+
+#. module: eo_attendance
+#: field:attendance.logs,image:0
+msgid "Attendance Image"
+msgstr "Imagine de prezență"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/attendance_logs_xls.py:72
+#, python-format
+msgid "Date Type"
+msgstr "Data Tip"
+
+#. module: eo_attendance
+#: model:ir.model,name:eo_attendance.model_attendance_users
+#: model:ir.model,name:eo_attendance.model_configurations_persons
+msgid "Users"
+msgstr "Utilizatori"
+
+#. module: eo_attendance
+#: code:addons/eo_attendance/report/pontaj_xls.py:81
+#: code:addons/eo_attendance/wizard/wizard_attendance_sheet.py:46
+#: model:ir.actions.act_window,name:eo_attendance.action_attendance_sheet_reporting
+#: view:list.attendance.sheet.reporting:0
+#: field:list.attendance.sheet.reporting,attendance_sheet_report_ids:0
+#, python-format
+msgid "Attendance Sheet"
+msgstr "Fișa de prezență"
+
+#. module: eo_attendance
+#: view:list.attendance.logs.reporting:0
+#: view:list.attendance.sheet.reporting:0
+msgid "Export XLS"
+msgstr "Export XLS"
+

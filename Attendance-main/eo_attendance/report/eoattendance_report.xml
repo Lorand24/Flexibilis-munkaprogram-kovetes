@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- Print Attendance Logs -->
+        <record id="attendance_logs_report_xls" model="ir.actions.report.xml">
+            <field name="report_type">xls</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+            <field name="model">list.attendance.logs.reporting</field>
+            <field name="name">Atttendance Logs</field>
+            <field name="report_name">eo_attendance_logs_report_xls</field>
+        </record>
+
+
+
+        <!-- Print Pontaj -->
+        <record id="pontaj_report_xls" model="ir.actions.report.xml">
+            <field name="report_type">xls</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+            <field name="model">list.attendance.sheet.reporting</field>
+            <field name="name">Attendance sheet</field>
+            <field name="report_name">pontaj_xls</field>
+        </record>
+		
+	</data>
+</openerp> 
