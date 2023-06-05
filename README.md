@@ -1,0 +1,2 @@
+# Flexibilis munkaprogram kovetes
+ A projekt celja egy olyan felxibilis felulet megvalositasa ahol nyomonkovetheto a munkasok munkaban eltoltott ideje, valamint a munkasoknak  szolgaltatni gombnyomasos ki vagy bejelentkezest amire egy nap tobb lehetoseg is van vagyis megszakithato szunetekkel. Valamint jelenleti iv nyomtatvany krealasa, ahol lathato a munkas napi ledolgozott oraja, a munkaugyi ossztaly kovetelese szerint.
